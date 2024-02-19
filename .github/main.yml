@@ -28,6 +28,6 @@ jobs:
 
       - name: Use OpenAI API Key
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           python your_script_using_openai.py
