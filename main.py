@@ -2,6 +2,7 @@ import os.path
 import os
 import streamlit as st
 from streamlit_extras.add_vertical_space import add_vertical_space
+
 os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY')
 # Fetch the API key from the environment variable
 # api_key = os.getenv('OPENAI_API_KEY')
@@ -87,7 +88,7 @@ def load_index():
 index = load_index()
 
 if "chat_engine" not in st.session_state.keys():
-    st.session_state.chat_engine = index.as_chat_engine(chat_mode="condense_question",condense_question_prompt=custom_prompt, verbose=True)
+    st.session_state.chat_engine = index.as_chat_engine(chat_mode="context", verbose=True)
 
 prompt = st.chat_input("Say something")
 
