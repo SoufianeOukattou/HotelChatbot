@@ -1,0 +1,33 @@
+name: Your CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set Up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run Tests
+        run: |
+          python your_tests.py
+
+      - name: Use OpenAI API Key
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
+        run: |
+          python your_script_using_openai.py
