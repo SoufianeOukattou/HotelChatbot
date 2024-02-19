@@ -52,15 +52,15 @@ with st.sidebar:
     ## More Info:
     - [Achbal Mail](mailto:achbal.business@gmail.com)
                 
-         This application communicates with Artificial Intelligence Ashbal powered by (LLM), built using:
+         This application communicates with Artificial Intelligence Achbal powered by (LLM), built using:
     - [Streamlit](https://streamlit.io/)
     - [OpenAI](https://platform.openai.com/docs/models) LLM Model
-    - [Idarati dataset](https://www.idarati.ma/)
+    - [Mamounia dataset](https://mamounia.com/en//)
     ''')
     add_vertical_space(5)
-    st.write('Created by Ashbal Team')
+    st.write('Created by Achbal Team')
 
-st.title('Communicate with Artificial Intelligence Ashbal')
+st.title('Communicate with Artificial Intelligence Achbal')
 
 if "messages" not in st.session_state.keys():
     st.session_state.messages = [
@@ -88,7 +88,7 @@ def load_index():
 index = load_index()
 
 if "chat_engine" not in st.session_state.keys():
-    st.session_state.chat_engine = index.as_chat_engine(chat_mode="context", verbose=True)
+    st.session_state.chat_engine = index.as_chat_engine(chat_mode="best", verbose=True)
 
 prompt = st.chat_input("Say something")
 
