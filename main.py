@@ -2,7 +2,9 @@ import os.path
 import os
 import streamlit as st
 from streamlit_extras.add_vertical_space import add_vertical_space
-api_key = os.environ.get("OPENAI_API_KEY")
+api_key = os.environ.get("OPENAI_KEY")
+
+
 from llama_index.core import Settings
 from llama_index.core import PromptTemplate
 
