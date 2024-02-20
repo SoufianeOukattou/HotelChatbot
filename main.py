@@ -88,7 +88,7 @@ def load_index():
 index = load_index()
 
 if "chat_engine" not in st.session_state.keys():
-    st.session_state.chat_engine = index.as_chat_engine(chat_mode="contexte", verbose=True)
+    st.session_state.chat_engine = index.as_chat_engine(chat_mode="context", verbose=True)
 
 prompt = st.chat_input("Say something")
 
